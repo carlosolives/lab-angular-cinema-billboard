@@ -1,0 +1,23 @@
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class Cinema {
+    movies: Array<Object> = [
+    { id: 1, title: 'Interstellar', poster:'https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SY1000_CR0,0,640,1000_AL_.jpg', synopsis:'Earths future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankinds survival: Interstellar travel. A newly discovered wormhole in the far reaches of our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right environment to sustain human life.', Genres:'Adventure', year: 2014, director:'Christopher Nolan', actors:' Matthew McConaughey, Anne Hathaway, Jessica Chastain', hours:'Wednesday 19:30, 22:30', room:1},
+    { id: 2, title: 'Sin City', poster:'https://images-na.ssl-images-amazon.com/images/M/MV5BODZmYjMwNzEtNzVhNC00ZTRmLTk2M2UtNzE1MTQ2ZDAxNjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg', synopsis:'Four tales of crime adapted from Frank Millers popular comics, focusing around a muscular brute who is looking for the person responsible for the death of his beloved Goldie, a man fed up with Sin City corrupt law enforcement who takes the law into his own hands after a horrible mistake, a cop who risks his life to protect a girl from a deformed pedophile, and a hitman looking to make a little cash.', Genres:'Crime', year:2005, director:'Frank Miller', actors:'Mickey Rourke, Clive Owen, Bruce Willis', hours:'Sunday 19:30, 22:30', room:2},
+    { id: 3, title: 'Kill Bill: Volumen 1', poster:'https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1NDg1Mzg4M15BMl5BanBnXkFtZTYwMDExOTc3._V1_.jpg', synopsis:'The lead character, called The Bride, was a member of the Deadly Viper Assassination Squad, led by her lover Bill. Upon realizing she was pregnant with Bills child, The Bride decided to escape her life as a killer. She fled to Texas, met a young man, who, on the day of their wedding rehearsal was gunned down by an angry and jealous Bill (with the assistance of the Deadly Viper Assassination Squad). Four years later, The Bride wakes from a coma, and discovers her baby is gone. She, then, decides to seek revenge upon the five people who destroyed her life and killed her baby. The saga of Kill Bill Volume I begins.', Genres:'Action', year:2003, director:'Quentin Tarantino', actors:'Uma Thurman, David Carradine, Daryl Hannah', hours:'Monday 20:30 23:00 ', room:3},
+    { id: 4, title: 'Kill Bill: Volumen 2 ', poster:'https://images-na.ssl-images-amazon.com/images/M/MV5BNjA2MjZiNmQtYmM0My00NmQwLWE2OGMtZGU0MWYzODI5YjY1XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_SX700_AL_.jpg', synopsis:'The murderous Bride is back and she is still continuing her vengeance quest against her ex-boss, Bill, and taking aim at Bills younger brother Budd and Elle Driver, the only survivors from the squad of assassins who betrayed her four years earlier. Its all leading up to the ultimate confrontation with Bill, the Brides former master and the man who ordered her execution!', Genres:'Crime', year:'2004', director:'Quentin Tarantino', actors:'Uma Thurman, David Carradine, Michael Madsen', hours:'Sunday 20:30, 22:30', room:4},
+    { id: 5, title: 'Inception', poster:'https://images-na.ssl-images-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg', synopsis:'Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobbs rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible - inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.', Genres:'Action', year:'2010', director:'Christopher Nolan', actors:' Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page', hours:'Friday 20:30 23:00' , room:5}
+  ];
+    constructor() { }
+
+    getmovies(){
+      return this.movies;
+
+    }
+    getMovie(id: number){
+      return this.movies.find((movie) => {
+        return (movie['id'] === id);
+      });
+    }
+}
